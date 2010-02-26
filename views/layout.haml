@@ -1,14 +1,18 @@
-!!!
+!!! 5
 %html
-  %head
-    %title= @title || SiteConfig.title
-    %link{:href => '/main.css', :rel => 'stylesheet', :type => 'text/css'}
-  %body
-    #container
-      #header
-        #logo
-          %h1
-            %a{:href => '/'}= SiteConfig.title
-      #content= yield
-      #footer
-        %p#legal= "&mdash; &copy; #{Time.now.strftime('%Y')} #{SiteConfig.author} &mdash;"
+	%head
+		%title= @title || SiteConfig.title
+		%meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}
+		%link{:href => 'base/jquery-ui.css', :rel => 'stylesheet', :type => 'text/css'}
+		%link{:href => '/application.css', :rel => 'stylesheet', :type => 'text/css'}
+		%script{:type => "text/javascript", :src  => "jquery-1.4.2.js"}
+		%script{:type => "text/javascript", :src  => "jquery-ui.js"}
+		%script{:type => "text/javascript", :src  => "jquery.rails.js"}
+		%script{:type => "text/javascript", :src  => "application.js"}
+	%body
+		#header
+			%ul
+				%li
+					%a{:href => '/'}= 'Home'
+		#container
+			= yield

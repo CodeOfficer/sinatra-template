@@ -16,6 +16,11 @@ helpers do
   # add your helpers here
 end
 
+get '/application.css' do
+  content_type 'text/css', :charset => 'utf-8'
+  sass :application
+end
+
 # root page
 get '/' do
   haml :root
